@@ -23,6 +23,8 @@ return {
   -- utility
   -- Neovim plugin for dimming the highlights of unused functions, variables, parameters, and more
   { import = "astrocommunity.utility.neodim" },
+  -- diagnostics
+  -- { import = "astrocommunity.diagnostics.trouble-nvim" },
   -- plugin that completely replaces the UI for messages, cmdline and the popupmenu
   -- { import = "astrocommunity.utility.noice-nvim" },
   -- example of imporing a plugin, comment out to use it or add your own
