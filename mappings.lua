@@ -4,14 +4,14 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 
-return function(local_vim)
-  local_vim.n["-"] = local_vim.n["\\"]
-  local_vim.n["\\"] = false
-  local_vim.n["<leader>H"] = local_vim.n["<leader>h"]
-  local_vim.n["<leader>h"] = false
-  local_vim.n["<leader>b-"] = local_vim.n["<leader>b\\"]
-  local_vim.n["<leader>b\\"] = false
-  local_vim.n["<leader>c"] = {
+return function(maps)
+  maps.n["-"] = maps.n["\\"]
+  maps.n["\\"] = false
+  maps.n["<leader>H"] = maps.n["<leader>h"]
+  maps.n["<leader>h"] = false
+  maps.n["<leader>b-"] = maps.n["<leader>b\\"]
+  maps.n["<leader>b\\"] = false
+  maps.n["<leader>c"] = {
     -- Open Alpha Automatically When No More Buffers
     function()
       local bufs = vim.fn.getbufinfo { buflisted = true }
@@ -20,6 +20,5 @@ return function(local_vim)
     end,
     desc = "Close buffer",
   }
-
-  return local_vim
+  return maps
 end
