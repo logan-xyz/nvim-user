@@ -7,8 +7,7 @@
 return function(maps)
   maps.n["-"] = maps.n["\\"]
   maps.n["\\"] = false
-  maps.n["<leader>H"] = maps.n["<leader>h"]
-  maps.n["<leader>h"] = false
+  maps.n["<leader>h"] = false -- remove go to dashboard keymap
   maps.n["<leader>b-"] = maps.n["<leader>b\\"]
   maps.n["<leader>b\\"] = false
   maps.n["<leader>c"] = {
@@ -20,5 +19,6 @@ return function(maps)
     end,
     desc = "Close buffer",
   }
+  maps.n["<leader>E"] = { "<cmd>:Telescope projects<CR>" }
   return maps
 end
