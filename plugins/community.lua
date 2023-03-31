@@ -19,6 +19,9 @@ return {
   { import = "astrocommunity.editing-support.neogen" },
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- { import = "astrocommunity.editing-support.refactoring-nvim" },
+  -- utility
+  -- Neovim plugin for dimming the highlights of unused functions, variables, parameters, and more
+  { import = "astrocommunity.utility.neodim" },
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
