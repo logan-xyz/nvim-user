@@ -6,6 +6,7 @@ return {
     relativenumber = false,
     -- spelllang = "en_us",
     -- spell = true,
+    wrap = true,
   },
   g = {},
 }

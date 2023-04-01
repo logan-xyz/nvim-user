@@ -32,6 +32,9 @@ return function(maps)
   maps.n["<leader>bs"] =
     { function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Fuzzy search current buffer" }
 
+  -- Clicpboard
+  maps.n["<leader>fp"] = { "<cmd>:Telescope neoclip<CR>", desc = "Clipboard" }
+
   -- Find spell sugguestions
   maps.n["<leader>fs"] = { function() require("telescope.builtin").spell_suggest() end, desc = "Spell sugguestions" }
 
