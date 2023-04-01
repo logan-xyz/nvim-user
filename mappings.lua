@@ -19,6 +19,21 @@ return function(maps)
     end,
     desc = "Close buffer",
   }
-  maps.n["<leader>E"] = { "<cmd>:Telescope projects<CR>" }
+
+  -- Project Manager
+  maps.n["<leader>pp"] = { "<cmd>:Telescope projects<CR>", desc = "Open projects" }
+
+  -- Resume previous telescope picker
+  maps.n["<leader>R"] = { function() require("telescope.builtin").resume() end, desc = "Resume privous picker" }
+
+  -- Manager Buffer
+  maps.n["<leader>bb"] = false
+  maps.n["<leader>bb"] = { function() require("telescope.builtin").buffers() end, desc = "List Open buffers" }
+  maps.n["<leader>bs"] =
+    { function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Fuzzy search current buffer" }
+
+  -- Find spell sugguestions
+  maps.n["<leader>fs"] = { function() require("telescope.builtin").spell_suggest() end, desc = "Spell sugguestions" }
+
   return maps
 end

@@ -1,9 +1,11 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
-    autowrite = false,              -- Enable autowrite
+    autowrite = false, -- Enable autowrite
     guicursor = "i:block-blinkon0", -- Use fat cursor in insert mode
     relativenumber = false,
+    -- spelllang = "en_us",
+    -- spell = true,
   },
   g = {},
 }
