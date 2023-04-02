@@ -1,12 +1,18 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
-    autowrite = false, -- Enable autowrite
     guicursor = "i:block-blinkon0", -- Use fat cursor in insert mode
     relativenumber = false,
-    -- spelllang = "en_us",
-    -- spell = true,
-    wrap = true,
+    conceallevel = 2, -- enable conceal
+    foldenable = false,
+    foldexpr = "nvim_treesitter#foldexpr()", -- set Treesitter based folding
+    foldmethod = "expr",
+    linebreak = true, -- linebreak soft wrap at words
+    list = true, -- show whitespace characters
+    listchars = { tab = "│→", extends = "⟩", precedes = "⟨", trail = "·", nbsp = "␣" },
+    showbreak = "↪ ",
+    swapfile = false,
+    wrap = true, -- soft wrap lines
   },
   g = {},
 }
