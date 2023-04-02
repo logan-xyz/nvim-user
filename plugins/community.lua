@@ -18,6 +18,8 @@ return {
   -- editing-support
   -- A better annotation generator. Supports multiple languages and annotation conventions.
   { import = "astrocommunity.editing-support.neogen" },
+  -- Zen mode https://github.com/folke/zen-mode.nvim
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- { import = "astrocommunity.editing-support.refactoring-nvim" },
   -- utility
