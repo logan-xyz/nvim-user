@@ -15,6 +15,8 @@ return {
       null_ls.builtins.code_actions.eslint_d,
       -- add spell suggestion to autocomplete list
       null_ls.builtins.completion.spell,
+      null_ls.builtins.diagnostics.cspell,
+      null_ls.builtins.code_actions.cspell,
     }
 
     return config -- return final config table
