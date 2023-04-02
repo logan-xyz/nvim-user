@@ -17,8 +17,8 @@ return {
 
       dashboard.section.buttons.val = {
         button("LDR S l", "➜  Load Last Session  "),
-        button("LDR p p", "➜  Find projects  "),
         button("LDR S f", "➜  Find Session  "),
+        button("LDR p p", "➜  Find projects  "),
         button("LDR f f", "➜  Find File  "),
         button("LDR f o", "➜  Recents  "),
         button("LDR f '", "➜  Bookmarks  "),
