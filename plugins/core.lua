@@ -2,9 +2,10 @@ return {
   -- customize alpha options
   {
     "goolord/alpha-nvim",
-    opts = function(_, opts)
+    cmd = "Alpha",
+    opts = function(_, dashboard)
       -- customize the dashboard header
-      opts.section.header.val = {
+      dashboard.section.header.val = {
         "██    ██ ██ ███    ███",
         "██    ██ ██ ████  ████",
         "██    ██ ██ ██ ████ ██",
@@ -12,7 +13,30 @@ return {
         "  ████   ██ ██      ██",
       }
 
-      return opts
+      local button = require("astronvim.utils").alpha_button
+
+      dashboard.section.buttons.val = {
+        button("LDR S l", "➜  Load Last Session  "),
+        button("LDR p p", "➜  Find projects  "),
+        button("LDR S f", "➜  Find Session  "),
+        button("LDR f f", "➜  Find File  "),
+        button("LDR f o", "➜  Recents  "),
+        button("LDR f '", "➜  Bookmarks  "),
+      }
+
+      return dashboard
+    end,
+    config = function(_, opts)
+      require("alpha").setup(opts.config)
+
+      vim.api.nvim_create_autocmd("UIEnter", {
+        callback = function()
+          local stats = require("lazy").stats()
+          local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+          opts.section.footer.val = { "Loaded " .. stats.count .. " plugins   in " .. ms .. "ms" }
+          opts.section.footer.opts.hl = "DashboardFooter"
+        end,
+      })
     end,
   },
   -- You can disable default plugins as follows:

@@ -11,7 +11,7 @@ return function(maps)
 
   maps.n["-"] = maps.n["\\"]
   maps.n["\\"] = false
-  maps.n["<leader>h"] = false -- remove go to dashboard keymap
+  -- maps.n["<leader>h"] = false -- remove go to dashboard keymap
   maps.n["<leader>b-"] = maps.n["<leader>b\\"]
   maps.n["<leader>b\\"] = false
   maps.n["<leader>c"] = {
