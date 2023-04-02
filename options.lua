@@ -12,6 +12,8 @@ return {
     listchars = { tab = "│→", extends = "⟩", precedes = "⟨", trail = "·", nbsp = "␣" },
     showbreak = "↪ ",
     swapfile = false,
+    spellfile = vim.fn.expand "~/.config/nvim/lua/user/spell/en.utf-8.add",
+    thesaurus = vim.fn.expand "~/.config/nvim/lua/user/spell/mthesaur.txt",
     wrap = true, -- soft wrap lines
   },
   g = {},
