@@ -9,9 +9,19 @@ return function(maps)
     x = { name = "Trouble" },
   }
 
+  -- Disable <leard>n to create new file
+  maps.n["<leader>n"] = false
+
+  -- Remap vertical window splitting
   maps.n["-"] = maps.n["\\"]
   maps.n["\\"] = false
 
+  -- Disable Astronvim Comment keymap, use the Comment.vim  keymap instead
+  -- https://github.com/numToStr/Comment.nvim
+  maps.n["<leader>/"] = false
+  maps.v["<leader>/"] = false
+
+  -- Remap horizontal split buffer from tabline
   maps.n["<leader>b-"] = maps.n["<leader>b\\"]
   maps.n["<leader>b\\"] = false
 
@@ -25,9 +35,6 @@ return function(maps)
     desc = "Close buffer",
   }
 
-  -- Project Manager
-  maps.n["<leader>pp"] = { "<cmd>:Telescope projects<CR>", desc = "Open projects" }
-
   -- Resume previous telescope picker
   maps.n["<leader>R"] = {
     function() require("telescope.builtin").resume() end,
@@ -40,19 +47,21 @@ return function(maps)
     function() require("telescope.builtin").buffers() end,
     desc = "List Open buffers",
   }
-  maps.n["<leader>bs"] = {
+
+  -- Finding
+  maps.n["<leader>fo"]["desc"] = "Find old files"
+  -- Search in current buffer
+  maps.n["<leader>fs"] = {
     function() require("telescope.builtin").current_buffer_fuzzy_find() end,
     desc = "Fuzzy search current buffer",
   }
+  -- Find project
+  maps.n["<leader>fP"] = { "<cmd>:Telescope projects<CR>", desc = "Find projects" }
 
   -- Clicpboard
-  maps.n["<leader>fp"] = { "<cmd>:Telescope neoclip<CR>", desc = "Clipboard" }
-
-  -- Find spell sugguestions
-  maps.n["<leader>fs"] = {
-    function() require("telescope.builtin").spell_suggest() end,
-    desc = "Spell sugguestions",
-  }
+  maps.n["<leader>fp"] = { "<cmd>:Telescope neoclip<CR>", desc = "Find Clipboard" }
+  maps.n["-"] = maps.n["\\"]
+  maps.n["\\"] = false
 
   -- Trouble
   maps.n["<leader>x"] = sections.x
