@@ -56,10 +56,21 @@ return function(maps)
     desc = "Fuzzy search current buffer",
   }
   -- Find project
-  maps.n["<leader>fP"] = { "<cmd>:Telescope projects<CR>", desc = "Find projects" }
+  maps.n["<leader>fP"] = { "<cmd>Telescope projects<CR>", desc = "Find projects" }
+  -- File browser
+  maps.n["<leader>f/"] = maps.n["<leader>ff"]
+  maps.n["<leader>f?"] = maps.n["<leader>fF"]
+  maps.n["<leader>ff"] = {
+    ":Telescope file_browser path=%:p:h select_buffer=true grouped=true<CR>",
+    desc = "Files browser in current folder",
+  }
+  maps.n["<leader>fF"] = {
+    ":Telescope file_browser grouped=true<CR>",
+    desc = "Files browser in project",
+  }
 
   -- Clicpboard
-  maps.n["<leader>fp"] = { "<cmd>:Telescope neoclip<CR>", desc = "Find Clipboard" }
+  maps.n["<leader>fp"] = { "<cmd>Telescope neoclip<CR>", desc = "Find Clipboard" }
   maps.n["-"] = maps.n["\\"]
   maps.n["\\"] = false
 
