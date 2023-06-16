@@ -14,7 +14,7 @@ return {
       null_ls.builtins.diagnostics.eslint_d,
       null_ls.builtins.code_actions.eslint_d,
       -- add spell suggestion to autocomplete list
-      null_ls.builtins.completion.spell,
+      -- null_ls.builtins.completion.spell,
       -- null_ls.builtins.diagnostics.cspell,
       -- null_ls.builtins.code_actions.cspell,
       null_ls.builtins.code_actions.gitsigns,

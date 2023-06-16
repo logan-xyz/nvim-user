@@ -16,7 +16,9 @@ return {
     thesaurus = vim.fn.expand "~/.config/nvim/lua/user/spell/mthesaur.txt",
     wrap = true, -- soft wrap lines
   },
-  g = {},
+  g = {
+    ui_notifications_enabled = false, -- disable notifications when toggling UI elements
+  },
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)

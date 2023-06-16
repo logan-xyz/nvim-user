@@ -15,8 +15,4 @@ return {
       desc = "Files browser in project",
     },
   },
-  config = function(_, opts)
-    require("neoclip").setup(opts)
-    require("telescope").load_extension "file_browser"
-  end,
 }

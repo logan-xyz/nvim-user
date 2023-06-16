@@ -1,8 +1,10 @@
 local actions = require "telescope.actions"
-local fb_actions = require("telescope").extensions.file_browser.actions
+local telescope = require "telescope"
+local fb_actions = telescope.extensions.file_browser.actions
 
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
   opts = {
     defaults = {
       prompt_prefix = string.format("%s ", "ᐅ"),
@@ -20,13 +22,12 @@ return {
         -- Don't show file stats, which occupies lots spacing
         display_stat = false,
         mappings = {
-          i = {
+          ["i"] = {
             ["<C-z>"] = fb_actions.toggle_hidden,
             ["<C-l>"] = actions.select_default,
-            -- see: https://github.com/nvim-telescope/telescope-file-browser.nvim/pull/65
             ["C-h"] = fb_actions.goto_parent_dir,
           },
-          n = {
+          ["n"] = {
             z = fb_actions.toggle_hidden,
             l = actions.select_default,
             h = fb_actions.goto_parent_dir,
@@ -35,4 +36,9 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    -- https://github.com/nvim-telescope/telescope-file-browser.nvim/issues/281
+    telescope.setup(opts)
+    telescope.load_extension "file_browser"
+  end,
 }

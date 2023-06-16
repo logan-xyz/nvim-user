@@ -18,13 +18,14 @@ return {
   -- editing-support
   -- A better annotation generator. Supports multiple languages and annotation conventions.
   { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
   -- Zen mode https://github.com/folke/zen-mode.nvim
   { import = "astrocommunity.editing-support.zen-mode-nvim" },
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- { import = "astrocommunity.editing-support.refactoring-nvim" },
   -- utility
   -- Neovim plugin for dimming the highlights of unused functions, variables, parameters, and more
-  { import = "astrocommunity.utility.neodim" },
+  -- { import = "astrocommunity.utility.neodim" },
   -- diagnostics
   -- { import = "astrocommunity.diagnostics.trouble-nvim" },
   -- plugin that completely replaces the UI for messages, cmdline and the popupmenu
